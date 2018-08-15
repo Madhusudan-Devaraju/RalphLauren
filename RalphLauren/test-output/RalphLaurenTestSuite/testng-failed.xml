@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [RalphLaurenTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="RLTCs(failed)">
+    <classes>
+      <class name="com.rl.qa.testcases.AccountLandingPageTest">
+        <methods>
+          <include name="verifyAccountLandingPageTitleTest"/>
+          <include name="close"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.rl.qa.testcases.AccountLandingPageTest -->
+    </classes>
+  </test> <!-- RLTCs(failed) -->
+</suite> <!-- Failed suite [RalphLaurenTestSuite] -->
