@@ -5,6 +5,7 @@
     <classes>
       <class name="com.rl.qa.testcases.RegistrationPageTest">
         <methods>
+          <include name="close"/>
           <include name="setup"/>
           <include name="createUser"/>
         </methods>
