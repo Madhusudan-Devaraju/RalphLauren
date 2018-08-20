@@ -6,6 +6,7 @@
       <class name="com.rl.qa.testcases.AccountLandingPageTest"/>
       <class name="com.rl.qa.testcases.FavoritesPageTest"/>
       <class name="com.rl.qa.testcases.LoginPageTest"/>
+       <class name="com.rl.qa.testcases.RegistrationPageTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

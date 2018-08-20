@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rl.qa.testcases.FavoritesPageTest">
+      <class name="com.rl.qa.testcases.RegistrationPageTest">
         <methods>
           <include name="setup"/>
-          <include name="close"/>
-          <include name="verifyNumberOfItems"/>
+          <include name="createUser"/>
         </methods>
-      </class> <!-- com.rl.qa.testcases.FavoritesPageTest -->
+      </class> <!-- com.rl.qa.testcases.RegistrationPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

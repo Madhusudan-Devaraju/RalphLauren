@@ -17,7 +17,7 @@ public class RegistrationPage extends TestBase
 	@FindBy (xpath = "//input[@placeholder = 'Email Address *']")
 	private WebElement email;
 
-	@FindBy (xpath = "Confirm Email Address *")
+	@FindBy (xpath = "//input[@placeholder = 'Confirm Email Address *']")
 	private WebElement confirmemail;
 
 	@FindBy (xpath = "//input[@placeholder = 'Password *']")
@@ -29,7 +29,7 @@ public class RegistrationPage extends TestBase
 	@FindBy (xpath = "(//button[@type = 'submit'])[4]")
 	private WebElement createaccountbutton;
 
-	@FindBy (xpath = "//input[@class='input-checkbox ']")
+	@FindBy (xpath = "//input[@id='dwfrm_profile_customer_addtoemaillist']")
 	private WebElement chkbox;
 
 	//initializing objects
@@ -79,14 +79,14 @@ public class RegistrationPage extends TestBase
 	}
 
 	//click create account button
-	public AccountLandingPage clicksreateaccount()
+	public AccountLandingPage clickCreateAccount()
 	{
 		createaccountbutton.click();
 		return new AccountLandingPage();
 	}
 
 	//click subscription checkbox
-	public void confirmpwd()
+	public void clickCheckbox()
 	{
 		chkbox.click();
 	}
