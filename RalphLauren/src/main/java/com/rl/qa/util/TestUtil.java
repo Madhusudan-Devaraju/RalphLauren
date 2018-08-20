@@ -1,19 +1,25 @@
 package com.rl.qa.util;
 
+import java.io.File;
 //import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 //import java.io.IOException;
 //import java.util.ArrayList;
+import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
 //import org.apache.poi.hssf.usermodel.examples.NewWorkbook;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.OutputType;
 //import org.apache.poi.xssf.usermodel.XSSFSheet;
 //import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.TakesScreenshot;
 
 import com.rl.qa.base.TestBase;
+
 
 public class TestUtil extends TestBase
 
@@ -76,6 +82,13 @@ public class TestUtil extends TestBase
 				data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
 		}
 		return data;
+	}
+	
+	public static void takeScreenShot() throws IOException
+	{
+		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String currentDir = System.getProperty("user.dir");
+		FileUtils.copyFile(srcFile, new  File(currentDir+ "/screenshots/"+System.currentTimeMillis()+ ".png"));
 	}
 
 }

@@ -7,7 +7,7 @@
         <methods>
           <include name="close"/>
           <include name="setup"/>
-          <include name="createUser"/>
+          <include name="createUser" invocation-numbers="0 1 2"/>
         </methods>
       </class> <!-- com.rl.qa.testcases.RegistrationPageTest -->
     </classes>

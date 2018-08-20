@@ -9,7 +9,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
+import com.rl.qa.util.SeleniumEventListener;
 import com.rl.qa.util.TestUtil;
 
 public class TestBase 
@@ -17,6 +19,8 @@ public class TestBase
 	//both these properties can be used in child classes as well
 	public static WebDriver driver;
 	public static Properties prop;
+	public static EventFiringWebDriver event;
+	public static SeleniumEventListener sel;
 
 	public TestBase()
 	{
@@ -45,12 +49,17 @@ public class TestBase
 			System.setProperty("webdriver.gecko.driver", "E:\\Selenium Dependencies\\BrowserExecutables\\geckodriver_win64_v0.21.0.exe");
 			driver = new FirefoxDriver();
 		}
-		
+
+		event = new EventFiringWebDriver(driver);
+		sel = new SeleniumEventListener();
+		event.register(sel);
+		driver = event;
+
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICITLY_WAIT, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
 	}
-	
+
 }
