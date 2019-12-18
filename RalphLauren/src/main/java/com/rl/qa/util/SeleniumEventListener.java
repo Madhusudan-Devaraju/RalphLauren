@@ -8,7 +8,6 @@ Do not call any of these methods, instead these methods will be invoked automati
 as an when the action done (click, findBy etc). 
  */
 
-
 import org.openqa.selenium.By;
 
 import org.openqa.selenium.OutputType;
@@ -18,9 +17,8 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 
 import com.rl.qa.base.TestBase;
 
-public class SeleniumEventListener extends TestBase implements WebDriverEventListener 
-{
-	
+public class SeleniumEventListener extends TestBase implements WebDriverEventListener {
+
 	@Override
 	public void afterAlertAccept(WebDriver driver) {
 		System.out.println("clicked on okay button");
@@ -35,19 +33,19 @@ public class SeleniumEventListener extends TestBase implements WebDriverEventLis
 
 	@Override
 	public void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] arg2) {
-		//System.out.println("Element value changed to:" + element.toString());
+		// System.out.println("Element value changed to:" + element.toString());
 
 	}
 
 	@Override
 	public void afterClickOn(WebElement element, WebDriver driver) {
-		System.out.println("clicked on "+ element.toString());
+		System.out.println("clicked on " + element.toString());
 
 	}
 
 	@Override
 	public void afterFindBy(By arg0, WebElement element, WebDriver driver) {
-		System.out.println("found element "+ element.toString());
+		System.out.println("found element " + element.toString());
 
 	}
 
@@ -59,19 +57,19 @@ public class SeleniumEventListener extends TestBase implements WebDriverEventLis
 
 	@Override
 	public void afterGetText(WebElement element, WebDriver driver, String text) {
-		//System.out.println("the text is "+ text);
+		// System.out.println("the text is "+ text);
 
 	}
 
 	@Override
 	public void afterNavigateBack(WebDriver driver) {
-		//System.out.println("navigated back");
+		// System.out.println("navigated back");
 
 	}
 
 	@Override
 	public void afterNavigateForward(WebDriver driver) {
-		//System.out.println("navigated to forward");
+		// System.out.println("navigated to forward");
 
 	}
 
@@ -89,7 +87,7 @@ public class SeleniumEventListener extends TestBase implements WebDriverEventLis
 
 	@Override
 	public void afterScript(String string, WebDriver driver) {
-		System.out.println("executed JS "+ string);
+		System.out.println("executed JS " + string);
 
 	}
 
@@ -113,19 +111,20 @@ public class SeleniumEventListener extends TestBase implements WebDriverEventLis
 
 	@Override
 	public void beforeChangeValueOf(WebElement element, WebDriver driver, CharSequence[] arg2) {
-		//System.out.println("Value of the" + element.toString() + " before any changes made");
+		// System.out.println("Value of the" + element.toString() + " before any changes
+		// made");
 
 	}
 
 	@Override
 	public void beforeClickOn(WebElement element, WebDriver driver) {
-		System.out.println("btrying to click element "+element.toString());
+		System.out.println("btrying to click element " + element.toString());
 
 	}
 
 	@Override
 	public void beforeFindBy(By by, WebElement element, WebDriver driver) {
-		System.out.println("trying to find elemnt by "+ by.toString());
+		System.out.println("trying to find elemnt by " + by.toString());
 
 	}
 
@@ -137,19 +136,19 @@ public class SeleniumEventListener extends TestBase implements WebDriverEventLis
 
 	@Override
 	public void beforeGetText(WebElement elemnt, WebDriver driver) {
-		//System.out.println("beofre getting text "+ elemnt.toString());
+		// System.out.println("beofre getting text "+ elemnt.toString());
 
 	}
 
 	@Override
 	public void beforeNavigateBack(WebDriver driver) {
-		//System.out.println("before navigating back");
+		// System.out.println("before navigating back");
 
 	}
 
 	@Override
 	public void beforeNavigateForward(WebDriver arg0) {
-		//System.out.println("before navigating forward");
+		// System.out.println("before navigating forward");
 
 	}
 
@@ -181,12 +180,11 @@ public class SeleniumEventListener extends TestBase implements WebDriverEventLis
 	public void onException(Throwable error, WebDriver driver) {
 		try {
 			TestUtil.takeScreenShot();
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 
 	}
-
 
 }
