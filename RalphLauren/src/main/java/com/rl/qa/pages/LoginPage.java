@@ -29,7 +29,7 @@ public class LoginPage extends TestBase {
 	private WebElement createAccount;
 
 	// initializing page objects
-	public LoginPage() throws IOException {
+	public LoginPage() {
 		PageFactory.initElements(driver, this);
 	}
 
